@@ -14,6 +14,9 @@
 		848C033F1C8061D200DEDF53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848C033D1C8061D200DEDF53 /* LaunchScreen.storyboard */; };
 		84E879B11C8077CD00462F9A /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E879B01C8077CD00462F9A /* News.storyboard */; settings = {ASSET_TAGS = (); }; };
 		84E879B41C80787D00462F9A /* HJHeadLineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E879B31C80787D00462F9A /* HJHeadLineController.m */; settings = {ASSET_TAGS = (); }; };
+		84EFF7FA1C80A7AD003FBD1B /* HJHeadLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EFF7F91C80A7AD003FBD1B /* HJHeadLineCell.m */; settings = {ASSET_TAGS = (); }; };
+		84EFF7FE1C80AA22003FBD1B /* HJHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EFF7FD1C80AA22003FBD1B /* HJHTTPManager.m */; settings = {ASSET_TAGS = (); }; };
+		84EFF8011C80AE18003FBD1B /* HJApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EFF8001C80AE18003FBD1B /* HJApiManager.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,12 @@
 		84E879B01C8077CD00462F9A /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		84E879B21C80787D00462F9A /* HJHeadLineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJHeadLineController.h; sourceTree = "<group>"; };
 		84E879B31C80787D00462F9A /* HJHeadLineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJHeadLineController.m; sourceTree = "<group>"; };
+		84EFF7F81C80A7AD003FBD1B /* HJHeadLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJHeadLineCell.h; sourceTree = "<group>"; };
+		84EFF7F91C80A7AD003FBD1B /* HJHeadLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJHeadLineCell.m; sourceTree = "<group>"; };
+		84EFF7FC1C80AA22003FBD1B /* HJHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJHTTPManager.h; sourceTree = "<group>"; };
+		84EFF7FD1C80AA22003FBD1B /* HJHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJHTTPManager.m; sourceTree = "<group>"; };
+		84EFF7FF1C80AE18003FBD1B /* HJApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJApiManager.h; sourceTree = "<group>"; };
+		84EFF8001C80AE18003FBD1B /* HJApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJApiManager.m; sourceTree = "<group>"; };
 		D9E08FC5B7F1C883441CC8CD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F43B0203625464502AAFA720 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +113,7 @@
 		84E879AC1C80774B00462F9A /* WYNews */ = {
 			isa = PBXGroup;
 			children = (
+				84EFF7FB1C80A9DE003FBD1B /* Tool */,
 				84E879AD1C80774B00462F9A /* Controller */,
 				84E879AE1C80774B00462F9A /* Model */,
 				84E879AF1C80774B00462F9A /* View */,
@@ -131,8 +141,21 @@
 			isa = PBXGroup;
 			children = (
 				84E879B01C8077CD00462F9A /* News.storyboard */,
+				84EFF7F81C80A7AD003FBD1B /* HJHeadLineCell.h */,
+				84EFF7F91C80A7AD003FBD1B /* HJHeadLineCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		84EFF7FB1C80A9DE003FBD1B /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				84EFF7FC1C80AA22003FBD1B /* HJHTTPManager.h */,
+				84EFF7FD1C80AA22003FBD1B /* HJHTTPManager.m */,
+				84EFF7FF1C80AE18003FBD1B /* HJApiManager.h */,
+				84EFF8001C80AE18003FBD1B /* HJApiManager.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +283,10 @@
 			files = (
 				84E879B41C80787D00462F9A /* HJHeadLineController.m in Sources */,
 				848C03341C8061D200DEDF53 /* AppDelegate.m in Sources */,
+				84EFF8011C80AE18003FBD1B /* HJApiManager.m in Sources */,
 				848C03311C8061D200DEDF53 /* main.m in Sources */,
+				84EFF7FE1C80AA22003FBD1B /* HJHTTPManager.m in Sources */,
+				84EFF7FA1C80A7AD003FBD1B /* HJHeadLineCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

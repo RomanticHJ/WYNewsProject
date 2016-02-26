@@ -12,20 +12,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="e2b-HM-OA8">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="279" height="354"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeadLine" id="R3k-lb-cjm">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeadLine" id="R3k-lb-cjm" customClass="HJHeadLineCell">
+                                <rect key="frame" x="21" y="0.0" width="279" height="354"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="279" height="354"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DaN-CI-o21">
+                                            <rect key="frame" x="8" y="329" width="36" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="DDf-4f-rqJ">
+                                            <rect key="frame" x="216" y="317" width="55" height="37"/>
+                                            <color key="pageIndicatorTintColor" red="0.89898989900000004" green="0.0593889217" blue="0.13479283619999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="currentPageIndicatorTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </pageControl>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hiM-RW-AvA">
+                                            <rect key="frame" x="0.0" y="0.0" width="279" height="319"/>
+                                        </imageView>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="DaN-CI-o21" secondAttribute="bottom" constant="8" id="2rS-ET-8dq"/>
+                                    <constraint firstAttribute="trailing" secondItem="DDf-4f-rqJ" secondAttribute="trailing" constant="8" id="5BS-Xx-25J"/>
+                                    <constraint firstAttribute="trailing" secondItem="hiM-RW-AvA" secondAttribute="trailing" id="6TH-kK-B8h"/>
+                                    <constraint firstItem="hiM-RW-AvA" firstAttribute="top" secondItem="R3k-lb-cjm" secondAttribute="top" id="EAU-sZ-PEY"/>
+                                    <constraint firstItem="DaN-CI-o21" firstAttribute="leading" secondItem="R3k-lb-cjm" secondAttribute="leading" constant="8" id="Mqc-sh-MDO"/>
+                                    <constraint firstAttribute="bottom" secondItem="DDf-4f-rqJ" secondAttribute="bottom" id="OMX-pV-KeG"/>
+                                    <constraint firstItem="hiM-RW-AvA" firstAttribute="leading" secondItem="R3k-lb-cjm" secondAttribute="leading" id="Pbf-bz-cDb"/>
+                                    <constraint firstAttribute="bottom" secondItem="hiM-RW-AvA" secondAttribute="bottom" constant="35" id="zed-Ev-hts"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="hiM-RW-AvA" id="TNE-sP-Six"/>
+                                    <outlet property="pageControl" destination="DDf-4f-rqJ" id="3F6-sR-hJE"/>
+                                    <outlet property="titleLabel" destination="DaN-CI-o21" id="WnN-JQ-ZVs"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -33,6 +64,9 @@
                             <outlet property="delegate" destination="QOp-rW-5Nz" id="NJc-2X-5g1"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <outlet property="layout" destination="e2b-HM-OA8" id="6lg-PY-y4v"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvD-eD-Zim" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
