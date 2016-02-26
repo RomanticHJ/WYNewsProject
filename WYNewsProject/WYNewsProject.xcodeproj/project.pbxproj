@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		371F5F47BF3761A8E9E4A992 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C81510FAC7D34C27E11CEFE /* libPods.a */; };
 		848C03311C8061D200DEDF53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 848C03301C8061D200DEDF53 /* main.m */; };
 		848C03341C8061D200DEDF53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 848C03331C8061D200DEDF53 /* AppDelegate.m */; };
 		848C03371C8061D200DEDF53 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848C03361C8061D200DEDF53 /* ViewController.m */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C81510FAC7D34C27E11CEFE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		848C032C1C8061D200DEDF53 /* WYNewsProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WYNewsProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848C03301C8061D200DEDF53 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		848C03321C8061D200DEDF53 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		848C033B1C8061D200DEDF53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		848C033E1C8061D200DEDF53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		848C03401C8061D200DEDF53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9E08FC5B7F1C883441CC8CD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F43B0203625464502AAFA720 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				371F5F47BF3761A8E9E4A992 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01D6063498E6EB2639AB05F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C81510FAC7D34C27E11CEFE /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		13B92B0E83F0E9E21F7C478F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D9E08FC5B7F1C883441CC8CD /* Pods.debug.xcconfig */,
+				F43B0203625464502AAFA720 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		848C03231C8061D200DEDF53 = {
 			isa = PBXGroup;
 			children = (
 				848C032E1C8061D200DEDF53 /* WYNewsProject */,
 				848C032D1C8061D200DEDF53 /* Products */,
+				13B92B0E83F0E9E21F7C478F /* Pods */,
+				01D6063498E6EB2639AB05F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 848C03431C8061D200DEDF53 /* Build configuration list for PBXNativeTarget "WYNewsProject" */;
 			buildPhases = (
+				FD3D01AC709B046CA8638DF2 /* Check Pods Manifest.lock */,
 				848C03281C8061D200DEDF53 /* Sources */,
 				848C03291C8061D200DEDF53 /* Frameworks */,
 				848C032A1C8061D200DEDF53 /* Resources */,
+				EBB0EE1F90636570F8ADFFEF /* Embed Pods Frameworks */,
+				16382C56BA7F38442EE4DB6C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,6 +171,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16382C56BA7F38442EE4DB6C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBB0EE1F90636570F8ADFFEF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD3D01AC709B046CA8638DF2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		848C03281C8061D200DEDF53 /* Sources */ = {
@@ -260,6 +335,7 @@
 		};
 		848C03441C8061D200DEDF53 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9E08FC5B7F1C883441CC8CD /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WYNewsProject/Info.plist;
@@ -271,6 +347,7 @@
 		};
 		848C03451C8061D200DEDF53 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F43B0203625464502AAFA720 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WYNewsProject/Info.plist;
@@ -299,6 +376,7 @@
 				848C03451C8061D200DEDF53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
