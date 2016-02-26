@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  HJHeadLineController.h
 //  WYNewsProject
 //
 //  Created by admin on 16/2/26.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface HJHeadLineController : UICollectionViewController
 
 @end
-
