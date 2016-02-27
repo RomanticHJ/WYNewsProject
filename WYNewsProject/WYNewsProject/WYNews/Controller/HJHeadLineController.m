@@ -9,6 +9,7 @@
 #import "HJHeadLineController.h"
 #import "HJHeadLineCell.h"
 #import "HJHeadLineModel.h"
+#define HJGroupCount 10000
 
 @interface HJHeadLineController ()
 
@@ -55,19 +56,19 @@ static NSString * const reuseIdentifier = @"HeadLine";
 - (void)loadData {
     [HJHeadLineModel headLineDatasWithURL:@"ad/headline/0-4.html" success:^(NSArray *headLines) {
         self.data = headLines;
-        // volatile array
-        NSMutableArray *tempData = [NSMutableArray arrayWithArray:headLines];
-        [tempData insertObject:[headLines lastObject] atIndex:0];
-        [tempData addObject:[headLines firstObject]];
-        self.data = tempData.copy;
         // refresh interface
         [self.collectionView reloadData];
         // show second element of default
-        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:5000] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
     }];
 }
 
 #pragma mark - UICollectionViewDataSource
+// use groups realize infinite loop
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return HJGroupCount;
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.data.count;
 }
@@ -75,23 +76,10 @@ static NSString * const reuseIdentifier = @"HeadLine";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     HJHeadLineCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     // set pagination
-    cell.tag = indexPath.item - 1;
+    cell.tag = indexPath.item;
     // set data
     cell.headLine = self.data[indexPath.item];
     return cell;
 }
 
-/**
- *  judge current which one when scroll end
- */
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    NSInteger index = scrollView.contentOffset.x / scrollView.bounds.size.width;
-    if (index == self.data.count - 1) {
-        // scroll back the first
-        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
-    }else if (index == 0) {
-        NSInteger page = self.data.count - 2;
-        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:page inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
-    }
-}
 @end
