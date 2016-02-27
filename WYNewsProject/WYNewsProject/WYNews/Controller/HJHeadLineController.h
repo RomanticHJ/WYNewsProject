@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HJHeadLineController : UICollectionViewController
+@interface HJHeadLineController : UIViewController
 
 @end

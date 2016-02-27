@@ -11,9 +11,16 @@
 #import "HJHeadLineModel.h"
 #define HJGroupCount 10000
 
-@interface HJHeadLineController ()
+@interface HJHeadLineController ()<UICollectionViewDataSource,UIScrollViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UICollectionViewFlowLayout *layout;
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
 /**
  *  collectionView data
  */
@@ -26,9 +33,16 @@ static NSString * const reuseIdentifier = @"HeadLine";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupView];
     [self loadData];
     
+}
+
+/**
+ *  subviews layout
+ */
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    [self setupView];
 }
 
 /**
@@ -58,8 +72,9 @@ static NSString * const reuseIdentifier = @"HeadLine";
         self.data = headLines;
         // refresh interface
         [self.collectionView reloadData];
-        // show second element of default
-        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:5000] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+        self.pageControl.numberOfPages = self.data.count;
+        // set first page of title
+        [self scrollViewDidEndDecelerating:self.collectionView];
     }];
 }
 
@@ -75,11 +90,17 @@ static NSString * const reuseIdentifier = @"HeadLine";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     HJHeadLineCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    // set pagination
-    cell.tag = indexPath.item;
     // set data
     cell.headLine = self.data[indexPath.item];
     return cell;
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSInteger index = (NSInteger)(scrollView.contentOffset.x / scrollView.bounds.size.width ) % self.data.count;
+    // take out current page data
+    HJHeadLineModel *headLine = self.data[index];
+    self.titleLabel.text = headLine.title;
+    self.pageControl.currentPage = index;
 }
 
 @end
