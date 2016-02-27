@@ -12,11 +12,13 @@
 		848C03341C8061D200DEDF53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 848C03331C8061D200DEDF53 /* AppDelegate.m */; };
 		848C033C1C8061D200DEDF53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848C033B1C8061D200DEDF53 /* Assets.xcassets */; };
 		848C033F1C8061D200DEDF53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848C033D1C8061D200DEDF53 /* LaunchScreen.storyboard */; };
-		84E879B11C8077CD00462F9A /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E879B01C8077CD00462F9A /* News.storyboard */; settings = {ASSET_TAGS = (); }; };
-		84E879B41C80787D00462F9A /* HJHeadLineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E879B31C80787D00462F9A /* HJHeadLineController.m */; settings = {ASSET_TAGS = (); }; };
-		84EFF7FA1C80A7AD003FBD1B /* HJHeadLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EFF7F91C80A7AD003FBD1B /* HJHeadLineCell.m */; settings = {ASSET_TAGS = (); }; };
-		84EFF7FE1C80AA22003FBD1B /* HJHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EFF7FD1C80AA22003FBD1B /* HJHTTPManager.m */; settings = {ASSET_TAGS = (); }; };
-		84EFF8011C80AE18003FBD1B /* HJApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EFF8001C80AE18003FBD1B /* HJApiManager.m */; settings = {ASSET_TAGS = (); }; };
+		849FA98F1C816E6F002E693A /* NSObject+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 849FA98E1C816E6F002E693A /* NSObject+Log.m */; };
+		849FA9991C816FD7002E693A /* HJHeadLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 849FA9981C816FD7002E693A /* HJHeadLineModel.m */; };
+		84E879B11C8077CD00462F9A /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E879B01C8077CD00462F9A /* News.storyboard */; };
+		84E879B41C80787D00462F9A /* HJHeadLineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E879B31C80787D00462F9A /* HJHeadLineController.m */; };
+		84EFF7FA1C80A7AD003FBD1B /* HJHeadLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EFF7F91C80A7AD003FBD1B /* HJHeadLineCell.m */; };
+		84EFF7FE1C80AA22003FBD1B /* HJHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EFF7FD1C80AA22003FBD1B /* HJHTTPManager.m */; };
+		84EFF8011C80AE18003FBD1B /* HJApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EFF8001C80AE18003FBD1B /* HJApiManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,10 @@
 		848C033B1C8061D200DEDF53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		848C033E1C8061D200DEDF53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		848C03401C8061D200DEDF53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		849FA98D1C816E6F002E693A /* NSObject+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Log.h"; sourceTree = "<group>"; };
+		849FA98E1C816E6F002E693A /* NSObject+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Log.m"; sourceTree = "<group>"; };
+		849FA9971C816FD7002E693A /* HJHeadLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJHeadLineModel.h; sourceTree = "<group>"; };
+		849FA9981C816FD7002E693A /* HJHeadLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJHeadLineModel.m; sourceTree = "<group>"; };
 		84E879B01C8077CD00462F9A /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		84E879B21C80787D00462F9A /* HJHeadLineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJHeadLineController.h; sourceTree = "<group>"; };
 		84E879B31C80787D00462F9A /* HJHeadLineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJHeadLineController.m; sourceTree = "<group>"; };
@@ -110,12 +116,31 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		849FA98C1C816E6F002E693A /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				849FA98D1C816E6F002E693A /* NSObject+Log.h */,
+				849FA98E1C816E6F002E693A /* NSObject+Log.m */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		849FA9961C816FD7002E693A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				849FA9971C816FD7002E693A /* HJHeadLineModel.h */,
+				849FA9981C816FD7002E693A /* HJHeadLineModel.m */,
+			);
+			name = Model;
+			path = Tool/Model;
+			sourceTree = "<group>";
+		};
 		84E879AC1C80774B00462F9A /* WYNews */ = {
 			isa = PBXGroup;
 			children = (
 				84EFF7FB1C80A9DE003FBD1B /* Tool */,
 				84E879AD1C80774B00462F9A /* Controller */,
-				84E879AE1C80774B00462F9A /* Model */,
+				849FA9961C816FD7002E693A /* Model */,
 				84E879AF1C80774B00462F9A /* View */,
 			);
 			path = WYNews;
@@ -128,13 +153,6 @@
 				84E879B31C80787D00462F9A /* HJHeadLineController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		84E879AE1C80774B00462F9A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		84E879AF1C80774B00462F9A /* View */ = {
@@ -150,6 +168,7 @@
 		84EFF7FB1C80A9DE003FBD1B /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				849FA98C1C816E6F002E693A /* Log */,
 				84EFF7FC1C80AA22003FBD1B /* HJHTTPManager.h */,
 				84EFF7FD1C80AA22003FBD1B /* HJHTTPManager.m */,
 				84EFF7FF1C80AE18003FBD1B /* HJApiManager.h */,
@@ -282,7 +301,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				84E879B41C80787D00462F9A /* HJHeadLineController.m in Sources */,
+				849FA9991C816FD7002E693A /* HJHeadLineModel.m in Sources */,
 				848C03341C8061D200DEDF53 /* AppDelegate.m in Sources */,
+				849FA98F1C816E6F002E693A /* NSObject+Log.m in Sources */,
 				84EFF8011C80AE18003FBD1B /* HJApiManager.m in Sources */,
 				848C03311C8061D200DEDF53 /* main.m in Sources */,
 				84EFF7FE1C80AA22003FBD1B /* HJHTTPManager.m in Sources */,

@@ -8,12 +8,15 @@
 
 #import "HJHeadLineController.h"
 #import "HJHeadLineCell.h"
-#import "HJApiManager.h"
+#import "HJHeadLineModel.h"
 
 @interface HJHeadLineController ()
 
 @property (nonatomic, weak) IBOutlet UICollectionViewFlowLayout *layout;
-
+/**
+ *  collectionView数据
+ */
+@property (nonatomic, strong) NSArray *data;
 @end
 
 @implementation HJHeadLineController
@@ -50,25 +53,26 @@ static NSString * const reuseIdentifier = @"HeadLine";
  *  加载头条数据
  */
 - (void)loadData {
-    [[HJApiManager sharedApi] requestHeadLineDataURL:@"ad/headline/0-4.html" success:^(id responseObject) {
-        NSLog(@"%@",responseObject);
-    } error:^(NSError *errorInfo) {
-        NSLog(@"%@",errorInfo);
+    [HJHeadLineModel headLineDatasWithURL:@"ad/headline/0-4.html" success:^(NSArray *headLines) {
+        self.data = headLines;
+        // refresh interface
+        [self.collectionView reloadData];
     }];
 }
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 4;
+    return self.data.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     HJHeadLineCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     cell.backgroundColor = [UIColor colorWithRed:((float)arc4random_uniform(256) / 255.0) green:((float)arc4random_uniform(256) / 255.0) blue:((float)arc4random_uniform(256) / 255.0) alpha:1.0];
-    // Configure the cell
+    
+    // 设置分页
+    cell.tag = indexPath.item;
+    // 设置数据
+    cell.headLine = self.data[indexPath.item];
     
     return cell;
-}
-
-
-@end
+}@end

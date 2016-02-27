@@ -18,6 +18,6 @@
  *  @param success 成功回调
  *  @param error   失败回调
  */
-- (void)requestHeadLineDataURL:(NSString *)url success:(void(^)(id responseObject))success error:(void(^)(NSError *errorInfo))error;
+- (void)requestHeadLineDataWithURL:(NSString *)url success:(void(^)(id responseObject))success error:(void(^)(NSError *errorInfo))error;
 
 @end

@@ -19,7 +19,7 @@
     return instance;
 }
 
-- (void)requestHeadLineDataURL:(NSString *)url success:(void (^)(id))success error:(void (^)(NSError *))error {
+- (void)requestHeadLineDataWithURL:(NSString *)url success:(void(^)(id responseObject))success error:(void(^)(NSError *errorInfo))error {
     NSAssert(success != nil || error != nil, @"回调不能为空");
     [[HJHTTPManager sharedManager] GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         success(responseObject);
