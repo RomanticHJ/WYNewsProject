@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+
 @class HJHeadLineModel;
 @interface HJHeadLineCell : UICollectionViewCell
 @property (nonatomic, strong) HJHeadLineModel *headLine;

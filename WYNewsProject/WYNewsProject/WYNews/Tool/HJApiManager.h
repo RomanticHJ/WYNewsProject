@@ -12,11 +12,11 @@
 
 + (instancetype)sharedApi;
 /**
- *  请求头条的广告数据
+ *  request headline data of advertisement
  *
- *  @param url     请求的路径
- *  @param success 成功回调
- *  @param error   失败回调
+ *  @param url     request path
+ *  @param success success call back
+ *  @param error   fail call back 
  */
 - (void)requestHeadLineDataWithURL:(NSString *)url success:(void(^)(id responseObject))success error:(void(^)(NSError *errorInfo))error;
 

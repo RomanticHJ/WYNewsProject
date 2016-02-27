@@ -14,7 +14,7 @@
 
 @property (nonatomic, weak) IBOutlet UICollectionViewFlowLayout *layout;
 /**
- *  collectionView数据
+ *  collectionView data
  */
 @property (nonatomic, strong) NSArray *data;
 @end
@@ -31,7 +31,7 @@ static NSString * const reuseIdentifier = @"HeadLine";
 }
 
 /**
- *  设置view的布局以及其他的样式
+ *  set view layout and other style
  */
 - (void)setupView {
     // set background color
@@ -50,13 +50,20 @@ static NSString * const reuseIdentifier = @"HeadLine";
 }
 
 /**
- *  加载头条数据
+ *  upload headline data
  */
 - (void)loadData {
     [HJHeadLineModel headLineDatasWithURL:@"ad/headline/0-4.html" success:^(NSArray *headLines) {
         self.data = headLines;
+        // volatile array
+        NSMutableArray *tempData = [NSMutableArray arrayWithArray:headLines];
+        [tempData insertObject:[headLines lastObject] atIndex:0];
+        [tempData addObject:[headLines firstObject]];
+        self.data = tempData.copy;
         // refresh interface
         [self.collectionView reloadData];
+        // show second element of default
+        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
     }];
 }
 
@@ -67,12 +74,24 @@ static NSString * const reuseIdentifier = @"HeadLine";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     HJHeadLineCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor colorWithRed:((float)arc4random_uniform(256) / 255.0) green:((float)arc4random_uniform(256) / 255.0) blue:((float)arc4random_uniform(256) / 255.0) alpha:1.0];
-    
-    // 设置分页
-    cell.tag = indexPath.item;
-    // 设置数据
+    // set pagination
+    cell.tag = indexPath.item - 1;
+    // set data
     cell.headLine = self.data[indexPath.item];
-    
     return cell;
-}@end
+}
+
+/**
+ *  judge current which one when scroll end
+ */
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSInteger index = scrollView.contentOffset.x / scrollView.bounds.size.width;
+    if (index == self.data.count - 1) {
+        // scroll back the first
+        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+    }else if (index == 0) {
+        NSInteger page = self.data.count - 2;
+        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:page inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+    }
+}
+@end
