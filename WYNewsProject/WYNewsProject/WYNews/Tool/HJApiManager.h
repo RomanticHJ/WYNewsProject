@@ -20,4 +20,13 @@
  */
 - (void)requestHeadLineDataWithURL:(NSString *)url success:(void(^)(id responseObject))success error:(void(^)(NSError *errorInfo))error;
 
+/**
+ *  request news data
+ *
+ *  @param url     request path
+ *  @param success success call back
+ *  @param error   fail call back
+ */
+- (void)requestNewsDataWithURL:(NSString *)url success:(void(^)(id responseObject))success error:(void(^)(NSError *errorInfo))error;
+
 @end
