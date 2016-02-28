@@ -9,6 +9,7 @@
 #import "HJNewsModel.h"
 #import <YYModel.h>
 #import "HJApiManager.h"
+#import "HJNewsImageModel.h"
 
 @implementation HJNewsModel
 
@@ -22,6 +23,12 @@
     } error:^(NSError *errorInfo) {
         success(nil);
     }];
+}
+
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    // value should be Class or Class name.
+    return @{@"imgextra" : [HJNewsImageModel class],
+             };
 }
 
 @end

@@ -9,6 +9,7 @@
 #import "HJNewsCell.h"
 #import "HJNewsModel.h"
 #import <UIImageView+WebCache.h>
+#import "HJNewsImageModel.h"
 
 @interface HJNewsCell ()
 
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *digestLabel;
 @property (weak, nonatomic) IBOutlet UILabel *replyCountLabel;
+@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *imgextra;
 
 @end
 
@@ -37,6 +39,36 @@
     self.titleLabel.text = _news.title;
     self.digestLabel.text = _news.digest;
     self.replyCountLabel.text = [NSString stringWithFormat:@"%ld人跟帖",(long)_news.replyCount];
+    
+    // judge if have more image or not
+    if (_news.imgextra) {
+        // set more image
+        [self.imgextra enumerateObjectsUsingBlock:^(UIImageView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            HJNewsImageModel *image = _news.imgextra[idx];
+            [obj sd_setImageWithURL:[NSURL URLWithString:image.imgsrc]];
+        }];
+    }
+}
+
++ (NSString *)cellIdentiferWithNews:(HJNewsModel *)news {
+    // judge use which cell cross image count
+    if (news.imgextra) {
+        return @"HJNewsMoreImageCell";
+    }else if (news.imgType == 1){
+        return @"HJNewsBigImageCell";
+    }else {
+        return @"HJNewsCell";
+    }
+}
+
++ (CGFloat)cellHeightWithNews:(HJNewsModel *)news {
+    if (news.imgextra) {
+        return 100;
+    }else if (news.imgType == 1){
+        return 150;
+    }else {
+        return 80;
+    }
 }
 
 @end

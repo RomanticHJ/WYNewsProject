@@ -10,4 +10,16 @@
 @class HJNewsModel;
 @interface HJNewsCell : UITableViewCell
 @property (nonatomic, strong) HJNewsModel *news;
+
+/**
+ *  back cell reuse ID
+ *
+ *  @param news model
+ *
+ *  @return reuse ID
+ */
++ (NSString *)cellIdentiferWithNews:(HJNewsModel *)news;
+
++ (CGFloat)cellHeightWithNews:(HJNewsModel *)news;
+
 @end

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class HJNewsImageModel;
 @interface HJNewsModel : NSObject
 
 @property (nonatomic, assign) NSInteger replyCount;
@@ -17,6 +17,12 @@
 @property (nonatomic, copy) NSString *imgsrc;
 
 @property (nonatomic, copy) NSString *title;
+
+@property (nonatomic, strong) NSArray<HJNewsImageModel *> *imgextra;
+/**
+ *  picture type --- default is 0   big picture is 1
+ */
+@property (nonatomic, assign) NSInteger imgType;
 
 /**
  *  upload news data

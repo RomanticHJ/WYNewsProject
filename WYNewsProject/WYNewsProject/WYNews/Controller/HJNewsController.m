@@ -34,9 +34,15 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    HJNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HJNewsCell" forIndexPath:indexPath];
-    cell.news = self.newsDatas[indexPath.row];
+    HJNewsModel *news = self.newsDatas[indexPath.row];
+    HJNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:[HJNewsCell cellIdentiferWithNews:news] forIndexPath:indexPath];
+    cell.news = news;
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    HJNewsModel *news = self.newsDatas[indexPath.row];
+    return [HJNewsCell cellHeightWithNews:news];
 }
 
 @end
