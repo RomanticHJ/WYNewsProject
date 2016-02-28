@@ -8,11 +8,10 @@
 
 #import "HJNewsController.h"
 #import "HJNewsModel.h"
+#import "HJNewsCell.h"
 
 @interface HJNewsController ()
-
 @property (nonatomic, strong) NSArray *newsDatas;
-
 @end
 
 @implementation HJNewsController
@@ -28,6 +27,16 @@
         // refresh the tableView
         [self.tableView reloadData];
     }];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.newsDatas.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    HJNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HJNewsCell" forIndexPath:indexPath];
+    cell.news = self.newsDatas[indexPath.row];
+    return cell;
 }
 
 @end

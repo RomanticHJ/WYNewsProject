@@ -16,7 +16,7 @@
 
 @property (nonatomic, copy) NSString *imgsrc;
 
-@property (nonatomic, copy) NSString *ltitle;
+@property (nonatomic, copy) NSString *title;
 
 /**
  *  upload news data

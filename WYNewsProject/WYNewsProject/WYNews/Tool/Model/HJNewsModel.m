@@ -18,10 +18,7 @@
         NSString *key = responseObject.keyEnumerator.nextObject;
         NSArray *data = responseObject[key];
         NSArray *tmp = [NSArray yy_modelArrayWithClass:self json:data];
-        // dislodge the first data because of interface is old
-        NSMutableArray *newsData = [NSMutableArray arrayWithArray:tmp];
-        [newsData removeObjectAtIndex:0];
-        success(newsData);
+        success(tmp);
     } error:^(NSError *errorInfo) {
         success(nil);
     }];
