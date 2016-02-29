@@ -51,6 +51,13 @@
             // Replace character string
             body = [body stringByReplacingOccurrencesOfString:ref withString:[self imageHTMLWithDict:obj]];
         }];
+        // Replace video
+        NSArray *videos = result[@"video"];
+        [videos enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSString *ref = obj[@"ref"];
+            body = [body stringByReplacingOccurrencesOfString:ref withString:[self videoHTMLWithDict:obj]];
+        }];
+        
         self.body = body;
         self.newsTitle = result[@"title"];
         self.time = [NSString stringWithFormat:@"%@ %@",result[@"ptime"],result[@"source"]];
@@ -63,9 +70,18 @@
     }];
 }
 
-
+#pragma mark - image and video 的拼接
 - (NSString *)imageHTMLWithDict:(NSDictionary *)dict {
-    NSString *html = [NSString stringWithFormat:@"<img src=\"%@\" width=\"100%%\"  alt=\"%@\"/>",dict[@"src"],dict[@"alt"]];
+    NSString *html = [NSString stringWithFormat:@"<img src=\"%@\" width=\"100%%\"  alt=\"%@\"/><span style=\"font-size: 13px;color: dimgrey\">%@</span>",dict[@"src"],dict[@"alt"],dict[@"alt"]];
+    return html;
+}
+
+- (NSString *)videoHTMLWithDict:(NSDictionary *)dict {
+    NSString *html = [NSString stringWithFormat:@"<video width=\"100%%\" controls>"
+                      "<source src=\"%@\""
+                      " type=\"video/mp4\">"
+                      "您的浏览器不支持 HTML5 video 标签。"
+                      "</video><span style=\"font-size: 13px;color: dimgrey\">%@</span>",dict[@"url_mp4"],dict[@"alt"]];
     return html;
 }
 
