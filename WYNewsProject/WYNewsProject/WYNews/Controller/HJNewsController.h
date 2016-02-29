@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface HJNewsController : UITableViewController
-
+@property (nonatomic, copy) NSString *channelId;
 @end

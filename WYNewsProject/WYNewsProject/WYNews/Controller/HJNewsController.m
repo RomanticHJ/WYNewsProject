@@ -22,7 +22,7 @@
 }
 
 - (void)loadData {
-    [HJNewsModel newsDatasWithURL:@"article/headline/T1348647853363/0-20.html" success:^(NSArray *news) {
+    [HJNewsModel newsDatasWithURL:[NSString stringWithFormat:@"article/headline/%@/0-20.html",self.channelId] success:^(NSArray *news) {
         self.newsDatas = news;
         // refresh the tableView
         [self.tableView reloadData];

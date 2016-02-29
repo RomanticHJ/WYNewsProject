@@ -35,7 +35,7 @@
 
 - (void)setNews:(HJNewsModel *)news {
     _news = news;
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:_news.imgsrc]];
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:_news.imgsrc] placeholderImage:nil options:SDWebImageRetryFailed | SDWebImageLowPriority];
     self.titleLabel.text = _news.title;
     self.digestLabel.text = _news.digest;
     self.replyCountLabel.text = [NSString stringWithFormat:@"%ld人跟帖",(long)_news.replyCount];
@@ -45,7 +45,7 @@
         // set more image
         [self.imgextra enumerateObjectsUsingBlock:^(UIImageView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             HJNewsImageModel *image = _news.imgextra[idx];
-            [obj sd_setImageWithURL:[NSURL URLWithString:image.imgsrc]];
+            [obj sd_setImageWithURL:[NSURL URLWithString:image.imgsrc] placeholderImage:nil options:SDWebImageRetryFailed | SDWebImageLowPriority];
         }];
     }
 }

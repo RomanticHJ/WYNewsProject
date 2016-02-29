@@ -16,8 +16,14 @@
 		8498A7F11C8321DE004B2943 /* HJNewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8498A7F01C8321DE004B2943 /* HJNewsController.m */; settings = {ASSET_TAGS = (); }; };
 		8498A7F41C833421004B2943 /* HJNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8498A7F31C833421004B2943 /* HJNewsCell.m */; settings = {ASSET_TAGS = (); }; };
 		8498A7F71C833917004B2943 /* HJNewsImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8498A7F61C833917004B2943 /* HJNewsImageModel.m */; settings = {ASSET_TAGS = (); }; };
+		8498A7F91C8352A9004B2943 /* topic_news.json in Resources */ = {isa = PBXBuildFile; fileRef = 8498A7F81C8352A9004B2943 /* topic_news.json */; settings = {ASSET_TAGS = (); }; };
 		849FA98F1C816E6F002E693A /* NSObject+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 849FA98E1C816E6F002E693A /* NSObject+Log.m */; };
 		849FA9991C816FD7002E693A /* HJHeadLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 849FA9981C816FD7002E693A /* HJHeadLineModel.m */; };
+		849FE7FD1C83E95F001A008A /* HJChannelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 849FE7FB1C83E95F001A008A /* HJChannelModel.m */; settings = {ASSET_TAGS = (); }; };
+		849FE7FF1C83E9BB001A008A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849FE7FE1C83E9BB001A008A /* Home.storyboard */; settings = {ASSET_TAGS = (); }; };
+		849FE8021C83EA10001A008A /* HJHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849FE8011C83EA10001A008A /* HJHomeController.m */; settings = {ASSET_TAGS = (); }; };
+		849FE8051C83EB25001A008A /* HJChannelLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 849FE8041C83EB25001A008A /* HJChannelLabel.m */; settings = {ASSET_TAGS = (); }; };
+		849FE80B1C840A41001A008A /* HJChannelNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849FE80A1C840A41001A008A /* HJChannelNewsCell.m */; settings = {ASSET_TAGS = (); }; };
 		84E879B11C8077CD00462F9A /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E879B01C8077CD00462F9A /* News.storyboard */; };
 		84E879B41C80787D00462F9A /* HJHeadLineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E879B31C80787D00462F9A /* HJHeadLineController.m */; };
 		84EFF7FA1C80A7AD003FBD1B /* HJHeadLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EFF7F91C80A7AD003FBD1B /* HJHeadLineCell.m */; };
@@ -42,10 +48,20 @@
 		8498A7F31C833421004B2943 /* HJNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJNewsCell.m; sourceTree = "<group>"; };
 		8498A7F51C833917004B2943 /* HJNewsImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJNewsImageModel.h; sourceTree = "<group>"; };
 		8498A7F61C833917004B2943 /* HJNewsImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJNewsImageModel.m; sourceTree = "<group>"; };
+		8498A7F81C8352A9004B2943 /* topic_news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = topic_news.json; sourceTree = "<group>"; };
 		849FA98D1C816E6F002E693A /* NSObject+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Log.h"; sourceTree = "<group>"; };
 		849FA98E1C816E6F002E693A /* NSObject+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Log.m"; sourceTree = "<group>"; };
 		849FA9971C816FD7002E693A /* HJHeadLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJHeadLineModel.h; sourceTree = "<group>"; };
 		849FA9981C816FD7002E693A /* HJHeadLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJHeadLineModel.m; sourceTree = "<group>"; };
+		849FE7FA1C83E95F001A008A /* HJChannelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJChannelModel.h; sourceTree = "<group>"; };
+		849FE7FB1C83E95F001A008A /* HJChannelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJChannelModel.m; sourceTree = "<group>"; };
+		849FE7FE1C83E9BB001A008A /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		849FE8001C83EA10001A008A /* HJHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJHomeController.h; sourceTree = "<group>"; };
+		849FE8011C83EA10001A008A /* HJHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJHomeController.m; sourceTree = "<group>"; };
+		849FE8031C83EB25001A008A /* HJChannelLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJChannelLabel.h; sourceTree = "<group>"; };
+		849FE8041C83EB25001A008A /* HJChannelLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJChannelLabel.m; sourceTree = "<group>"; };
+		849FE8091C840A41001A008A /* HJChannelNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJChannelNewsCell.h; sourceTree = "<group>"; };
+		849FE80A1C840A41001A008A /* HJChannelNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJChannelNewsCell.m; sourceTree = "<group>"; };
 		84E879B01C8077CD00462F9A /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		84E879B21C80787D00462F9A /* HJHeadLineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJHeadLineController.h; sourceTree = "<group>"; };
 		84E879B31C80787D00462F9A /* HJHeadLineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJHeadLineController.m; sourceTree = "<group>"; };
@@ -122,6 +138,7 @@
 		848C032F1C8061D200DEDF53 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8498A7F81C8352A9004B2943 /* topic_news.json */,
 				848C03401C8061D200DEDF53 /* Info.plist */,
 				848C03301C8061D200DEDF53 /* main.m */,
 			);
@@ -151,9 +168,50 @@
 			path = Tool/Model;
 			sourceTree = "<group>";
 		};
+		849FE7F71C83E95F001A008A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				849FE7F81C83E95F001A008A /* Controller */,
+				849FE7F91C83E95F001A008A /* Model */,
+				849FE7FC1C83E95F001A008A /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		849FE7F81C83E95F001A008A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				849FE8001C83EA10001A008A /* HJHomeController.h */,
+				849FE8011C83EA10001A008A /* HJHomeController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		849FE7F91C83E95F001A008A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				849FE7FA1C83E95F001A008A /* HJChannelModel.h */,
+				849FE7FB1C83E95F001A008A /* HJChannelModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		849FE7FC1C83E95F001A008A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				849FE7FE1C83E9BB001A008A /* Home.storyboard */,
+				849FE8031C83EB25001A008A /* HJChannelLabel.h */,
+				849FE8041C83EB25001A008A /* HJChannelLabel.m */,
+				849FE8091C840A41001A008A /* HJChannelNewsCell.h */,
+				849FE80A1C840A41001A008A /* HJChannelNewsCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		84E879AC1C80774B00462F9A /* WYNews */ = {
 			isa = PBXGroup;
 			children = (
+				849FE7F71C83E95F001A008A /* Home */,
 				84EFF7FB1C80A9DE003FBD1B /* Tool */,
 				84E879AD1C80774B00462F9A /* Controller */,
 				849FA9961C816FD7002E693A /* Model */,
@@ -260,7 +318,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				848C033F1C8061D200DEDF53 /* LaunchScreen.storyboard in Resources */,
+				849FE7FF1C83E9BB001A008A /* Home.storyboard in Resources */,
 				84E879B11C8077CD00462F9A /* News.storyboard in Resources */,
+				8498A7F91C8352A9004B2943 /* topic_news.json in Resources */,
 				848C033C1C8061D200DEDF53 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,10 +383,14 @@
 				84E879B41C80787D00462F9A /* HJHeadLineController.m in Sources */,
 				849FA9991C816FD7002E693A /* HJHeadLineModel.m in Sources */,
 				848C03341C8061D200DEDF53 /* AppDelegate.m in Sources */,
+				849FE8051C83EB25001A008A /* HJChannelLabel.m in Sources */,
 				849FA98F1C816E6F002E693A /* NSObject+Log.m in Sources */,
 				8498A7F71C833917004B2943 /* HJNewsImageModel.m in Sources */,
+				849FE80B1C840A41001A008A /* HJChannelNewsCell.m in Sources */,
 				8498A7F41C833421004B2943 /* HJNewsCell.m in Sources */,
+				849FE8021C83EA10001A008A /* HJHomeController.m in Sources */,
 				84EFF8011C80AE18003FBD1B /* HJApiManager.m in Sources */,
+				849FE7FD1C83E95F001A008A /* HJChannelModel.m in Sources */,
 				8498A7EE1C831D38004B2943 /* HJNewsModel.m in Sources */,
 				8498A7F11C8321DE004B2943 /* HJNewsController.m in Sources */,
 				848C03311C8061D200DEDF53 /* main.m in Sources */,
