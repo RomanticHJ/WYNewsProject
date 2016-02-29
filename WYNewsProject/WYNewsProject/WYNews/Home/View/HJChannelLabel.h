@@ -11,6 +11,7 @@
 @interface HJChannelLabel : UILabel
 
 @property (nonatomic, copy) void(^clickchannel)();
+@property (nonatomic, assign) CGFloat scale;
 
 + (instancetype)channelLabelWithTitle:(NSString *)title;
 

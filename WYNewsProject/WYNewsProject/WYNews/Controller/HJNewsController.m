@@ -22,6 +22,7 @@
 }
 
 - (void)loadData {
+    NSLog(@"append to news channel == %@",self.channelId);
     [HJNewsModel newsDatasWithURL:[NSString stringWithFormat:@"article/headline/%@/0-20.html",self.channelId] success:^(NSArray *news) {
         self.newsDatas = news;
         // refresh the tableView

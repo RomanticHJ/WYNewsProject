@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class HJChannelModel;
+@class HJNewsController;
 @interface HJChannelNewsCell : UICollectionViewCell
-@property (nonatomic, strong) HJChannelModel *changnel;
+@property (nonatomic, strong) HJNewsController *news;
 @end

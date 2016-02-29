@@ -24,6 +24,7 @@
     label.font = [UIFont systemFontOfSize:HJNormalFont];
     // open label userInteractionEnabled
     label.userInteractionEnabled = YES;
+    label.textAlignment = NSTextAlignmentCenter;
     return label;
 }
 
@@ -31,6 +32,13 @@
     if (self.clickchannel) {
         self.clickchannel();
     }
+}
+
+- (void)setScale:(CGFloat)scale {
+    CGFloat percent = (CGFloat)(HJBigFont - HJNormalFont) / HJNormalFont;
+    percent = percent * scale + 1;
+    self.transform = CGAffineTransformMakeScale(percent, percent);
+    self.textColor = [UIColor colorWithRed:percent * scale green:0 blue:0 alpha:YES];
 }
 
 @end

@@ -62,7 +62,7 @@
                     <connections>
                         <outlet property="collectionView" destination="lPd-Ha-e8G" id="F8Z-Sz-luv"/>
                         <outlet property="layout" destination="jSK-Yi-UOW" id="mCy-sQ-2SY"/>
-                        <outlet property="scrollViw" destination="1sR-GM-Yia" id="reN-C8-rqv"/>
+                        <outlet property="scrollView" destination="1sR-GM-Yia" id="TQ5-sM-2bH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AaQ-hp-mXf" userLabel="First Responder" sceneMemberID="firstResponder"/>
