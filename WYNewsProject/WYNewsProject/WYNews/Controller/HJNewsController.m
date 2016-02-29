@@ -9,6 +9,7 @@
 #import "HJNewsController.h"
 #import "HJNewsModel.h"
 #import "HJNewsCell.h"
+#import "HJNewsDetailController.h"
 
 @interface HJNewsController ()
 @property (nonatomic, strong) NSArray *newsDatas;
@@ -44,6 +45,17 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     HJNewsModel *news = self.newsDatas[indexPath.row];
     return [HJNewsCell cellHeightWithNews:news];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Jump to the details page
+    // Take out the corresponding model
+    HJNewsModel *news = self.newsDatas[indexPath.row];
+    // Initialize the details page controller
+    HJNewsDetailController *detail = [[HJNewsDetailController alloc] init];
+    detail.newsURL = news.fullURL;
+    // push
+    [self.navigationController pushViewController:detail animated:YES];
 }
 
 @end

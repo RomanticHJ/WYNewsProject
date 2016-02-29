@@ -7,7 +7,6 @@
 //
 
 #import "HJHTTPManager.h"
-#define HJBaseURL [NSURL URLWithString:@"http://c.m.163.com/nc/"]
 
 @implementation HJHTTPManager
 

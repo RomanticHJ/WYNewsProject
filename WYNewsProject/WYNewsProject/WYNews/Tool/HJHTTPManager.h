@@ -7,7 +7,7 @@
 //
 
 #import <AFNetworking/AFNetworking.h>
-
+#define HJBaseURL [NSURL URLWithString:@"http://c.m.163.com/nc/"]
 @interface HJHTTPManager : AFHTTPSessionManager
 
 + (instancetype)sharedManager;

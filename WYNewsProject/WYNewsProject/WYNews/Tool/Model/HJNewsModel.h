@@ -23,6 +23,9 @@
  *  picture type --- default is 0   big picture is 1
  */
 @property (nonatomic, assign) NSInteger imgType;
+@property (nonatomic, copy) NSString *docid;
+// News detail path
+@property (nonatomic, copy) NSString *fullURL;
 
 /**
  *  upload news data

@@ -31,4 +31,9 @@
              };
 }
 
+- (void)setDocid:(NSString *)docid {
+    _docid = docid.copy;
+    self.fullURL = [NSString stringWithFormat:@"article/%@/full.html",_docid];
+}
+
 @end

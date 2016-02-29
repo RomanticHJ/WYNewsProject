@@ -29,6 +29,8 @@
 		84EFF7FA1C80A7AD003FBD1B /* HJHeadLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EFF7F91C80A7AD003FBD1B /* HJHeadLineCell.m */; };
 		84EFF7FE1C80AA22003FBD1B /* HJHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EFF7FD1C80AA22003FBD1B /* HJHTTPManager.m */; };
 		84EFF8011C80AE18003FBD1B /* HJApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EFF8001C80AE18003FBD1B /* HJApiManager.m */; };
+		84FB95491C84A4CA009D3A46 /* HJNewsDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FB95481C84A4CA009D3A46 /* HJNewsDetailController.m */; settings = {ASSET_TAGS = (); }; };
+		84FB954B1C84AFAD009D3A46 /* detail.html in Resources */ = {isa = PBXBuildFile; fileRef = 84FB954A1C84AFAD009D3A46 /* detail.html */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,9 @@
 		84EFF7FD1C80AA22003FBD1B /* HJHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJHTTPManager.m; sourceTree = "<group>"; };
 		84EFF7FF1C80AE18003FBD1B /* HJApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJApiManager.h; sourceTree = "<group>"; };
 		84EFF8001C80AE18003FBD1B /* HJApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJApiManager.m; sourceTree = "<group>"; };
+		84FB95471C84A4CA009D3A46 /* HJNewsDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJNewsDetailController.h; sourceTree = "<group>"; };
+		84FB95481C84A4CA009D3A46 /* HJNewsDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJNewsDetailController.m; sourceTree = "<group>"; };
+		84FB954A1C84AFAD009D3A46 /* detail.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = detail.html; sourceTree = "<group>"; };
 		D9E08FC5B7F1C883441CC8CD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F43B0203625464502AAFA720 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +143,7 @@
 		848C032F1C8061D200DEDF53 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				84FB954A1C84AFAD009D3A46 /* detail.html */,
 				8498A7F81C8352A9004B2943 /* topic_news.json */,
 				848C03401C8061D200DEDF53 /* Info.plist */,
 				848C03301C8061D200DEDF53 /* main.m */,
@@ -227,6 +233,8 @@
 				84E879B31C80787D00462F9A /* HJHeadLineController.m */,
 				8498A7EF1C8321DE004B2943 /* HJNewsController.h */,
 				8498A7F01C8321DE004B2943 /* HJNewsController.m */,
+				84FB95471C84A4CA009D3A46 /* HJNewsDetailController.h */,
+				84FB95481C84A4CA009D3A46 /* HJNewsDetailController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -320,6 +328,7 @@
 				848C033F1C8061D200DEDF53 /* LaunchScreen.storyboard in Resources */,
 				849FE7FF1C83E9BB001A008A /* Home.storyboard in Resources */,
 				84E879B11C8077CD00462F9A /* News.storyboard in Resources */,
+				84FB954B1C84AFAD009D3A46 /* detail.html in Resources */,
 				8498A7F91C8352A9004B2943 /* topic_news.json in Resources */,
 				848C033C1C8061D200DEDF53 /* Assets.xcassets in Resources */,
 			);
@@ -396,6 +405,7 @@
 				848C03311C8061D200DEDF53 /* main.m in Sources */,
 				84EFF7FE1C80AA22003FBD1B /* HJHTTPManager.m in Sources */,
 				84EFF7FA1C80A7AD003FBD1B /* HJHeadLineCell.m in Sources */,
+				84FB95491C84A4CA009D3A46 /* HJNewsDetailController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
